@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const imgPoke =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -13,10 +14,10 @@ const CardList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await axios.get(
+        const res = await axios.get(
           "https://pokeapi.co/api/v2/pokemon?limit=151"
         );
-        setData(data.data.results);
+        setData(res.data.results);
       } catch (error) {
         console.error(error.message);
       }
@@ -33,10 +34,9 @@ const CardList = () => {
             {data.map((data, index) => (
               <div key={index} className="group relative">
                 <h3 className="text-sm text-gray-700">
-                  <a href={data.href}>
-                    <span aria-hidden="true" className="absolute inset-0" />
-                    {data.name}
-                  </a>
+                  <NavLink to={`/pokemons/${data.name}`}>
+                    {data.name.toUpperCase()}
+                  </NavLink>
                 </h3>
                 <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img

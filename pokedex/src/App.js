@@ -2,6 +2,8 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import List from "./pages/List";
+import Pokemon from "./pages/Pokemon";
+
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,7 +12,8 @@ function App() {
       <Nav />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="list" element={<List />} />
+        <Route path="pokemons" element={<List />} />
+        <Route path="pokemons/:slug" element={<Pokemon />} />
         <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
     </>

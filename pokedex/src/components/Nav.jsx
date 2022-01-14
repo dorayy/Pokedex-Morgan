@@ -24,7 +24,7 @@ function Nav() {
                   </NavLink>
                   <NavLink
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    to="/list"
+                    to="/pokemons"
                   >
                     List Pokemon
                   </NavLink>
@@ -98,7 +98,7 @@ function Nav() {
                 </NavLink>
                 <NavLink
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  to="/list"
+                  to="/pokemons"
                 >
                   List Pokemon
                 </NavLink>
