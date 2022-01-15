@@ -5,6 +5,7 @@ import Section from "../components/Section";
 
 const PokeCard = () => {
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
   let { slug } = useParams();
 
   useEffect(() => {
@@ -22,20 +23,39 @@ const PokeCard = () => {
     fetchData();
   }, []);
 
-  return (
-    <>
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-gray-900">
-          {data.name} #{data.id}
-        </h1>
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await new Promise((r) => setTimeout(r, 1000));
+        setLoader((loading) => !loading);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    loadData();
+  }, []);
+  if (loader) {
+    return (
+      <div class="loading">
+        <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
       </div>
-      <div className="bg-white">
-        <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-          <Section {...data}></Section>
+    );
+  } else {
+    return (
+      <>
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-gray-900">
+            {data.name} #{data.id}
+          </h1>
         </div>
-      </div>
-    </>
-  );
+        <div className="bg-white">
+          <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <Section {...data}></Section>
+          </div>
+        </div>
+      </>
+    );
+  }
 };
 
 export default PokeCard;
