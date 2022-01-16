@@ -28,6 +28,12 @@ function Nav() {
                   >
                     List Pokemon
                   </NavLink>
+                  <NavLink
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    to="/favoris"
+                  >
+                    Pokémon Favoris
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -101,6 +107,12 @@ function Nav() {
                   to="/pokemons"
                 >
                   List Pokemon
+                </NavLink>
+                <NavLink
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  to="/favoris"
+                >
+                  Pokemon Favoris
                 </NavLink>
               </div>
             </div>

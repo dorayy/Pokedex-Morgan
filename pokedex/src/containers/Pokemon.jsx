@@ -36,7 +36,7 @@ const PokeCard = () => {
   }, []);
   if (loader) {
     return (
-      <div class="loading">
+      <div className="loading">
         <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
       </div>
     );

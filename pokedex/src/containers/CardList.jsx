@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Button from "../components/Button";
 
 const imgPoke =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -50,7 +51,7 @@ const CardList = () => {
 
   if (loader) {
     return (
-      <div class="loading">
+      <div className="loading">
         <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
       </div>
     );
@@ -83,9 +84,15 @@ const CardList = () => {
                         {data.name.toUpperCase()}
                       </NavLink>
                     </h3>
+
+                    <Button
+                      pokemonName={data.name}
+                      id={data.url.split("/")[6]}
+                    ></Button>
+
                     <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                       <img
-                        src={imgPoke + (index + 1) + ".png"}
+                        src={imgPoke + data.url.split("/")[6] + ".png"}
                         alt={noImgPoke}
                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                       />
