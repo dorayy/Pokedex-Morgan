@@ -39,6 +39,14 @@ function Favoris() {
         <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
       </div>
     );
+  } else if (data === null) {
+    return (
+      <header className="bg-white shadow">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-gray-900">Pokemons Favoris</h1>
+        </div>
+      </header>
+    );
   } else {
     return (
       <>
