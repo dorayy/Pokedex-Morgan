@@ -38,7 +38,7 @@ function Nav() {
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     to="/listype"
                   >
-                    Type filtre
+                    Type
                   </NavLink>
                 </div>
               </div>
@@ -124,7 +124,7 @@ function Nav() {
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   to="/listype"
                 >
-                  Type filtre
+                  Type
                 </NavLink>
               </div>
             </div>
