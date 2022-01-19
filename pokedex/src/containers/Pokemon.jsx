@@ -21,7 +21,7 @@ const PokeCard = () => {
     };
 
     fetchData();
-  }, []);
+  });
 
   useEffect(() => {
     const loadData = async () => {

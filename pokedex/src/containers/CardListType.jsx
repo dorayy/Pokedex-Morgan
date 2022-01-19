@@ -1,13 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Button from "../components/Button";
-
-const imgPoke =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-
-const noImgPoke =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png";
 
 const CardListType = () => {
   const [data, setData] = useState([]);

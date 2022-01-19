@@ -25,7 +25,7 @@ const Type = () => {
     };
 
     fetchData();
-  }, []);
+  });
 
   useEffect(() => {
     const loadData = async () => {
