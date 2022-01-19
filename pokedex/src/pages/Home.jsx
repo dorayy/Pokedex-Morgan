@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import SvgContactModal from "../components/SectionComp/Svg5";
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
@@ -36,9 +36,11 @@ function Home() {
   }, 3000);
   return (
     <>
-      {/* <Helmet>
-        <title>Home page</title>
-      </Helmet> */}
+      {
+        <Helmet>
+          <title>Home page</title>
+        </Helmet>
+      }
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Contact me</h1>

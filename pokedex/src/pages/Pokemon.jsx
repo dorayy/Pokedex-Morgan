@@ -1,14 +1,12 @@
-import { Helmet } from "react-helmet";
-import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import PokemonDetail from "../containers/Pokemon";
 const Pokemon = () => {
-  let { slug } = useParams();
-
   return (
     <>
-      {/* <Helmet>
+      <Helmet>
         <title>Pokemon</title>
-      </Helmet> */}
+      </Helmet>
+
       <main className="bg-white shadow">
         <PokemonDetail></PokemonDetail>
       </main>

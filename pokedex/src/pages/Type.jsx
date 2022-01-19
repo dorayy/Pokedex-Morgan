@@ -1,12 +1,12 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import TypePoke from "../containers/Type";
 
 const Type = () => {
   return (
     <>
-      {/* <Helmet>
-        <title>Pokemon</title>
-      </Helmet> */}
+      <Helmet>
+        <title>Type Pokemon</title>
+      </Helmet>
       <main className="bg-white shadow">
         <TypePoke></TypePoke>
       </main>

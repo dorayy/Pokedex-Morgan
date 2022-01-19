@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -50,9 +50,9 @@ function Favoris() {
   } else {
     return (
       <>
-        {/* <Helmet>
-        <title>Home page</title>
-      </Helmet> */}
+        <Helmet>
+          <title>Favoris page</title>
+        </Helmet>
 
         <header className="bg-white shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
