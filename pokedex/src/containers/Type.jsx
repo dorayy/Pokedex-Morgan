@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const imgPoke =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -39,11 +40,7 @@ const Type = () => {
     loadData();
   }, []);
   if (loader) {
-    return (
-      <div className="loading">
-        <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
-      </div>
-    );
+    return <Loader />;
   } else {
     return (
       <>

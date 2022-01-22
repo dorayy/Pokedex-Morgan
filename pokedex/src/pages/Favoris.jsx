@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Loader from "../components/Loader";
 
 function Favoris() {
   const [loader, setLoader] = useState(true);
@@ -34,11 +35,7 @@ function Favoris() {
   }, []);
 
   if (loader) {
-    return (
-      <div className="loading">
-        <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
-      </div>
-    );
+    return <Loader />;
   } else if (data === null) {
     return (
       <header className="bg-white shadow">

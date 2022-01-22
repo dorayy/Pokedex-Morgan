@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Section from "../components/Section";
+import Loader from "../components/Loader";
 
 const PokeCard = () => {
   const [data, setData] = useState([]);
@@ -35,11 +36,7 @@ const PokeCard = () => {
     loadData();
   }, []);
   if (loader) {
-    return (
-      <div className="loading">
-        <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
-      </div>
-    );
+    return <Loader />;
   } else {
     return (
       <>

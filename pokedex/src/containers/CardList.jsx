@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../components/Button";
+import Loader from "../components/Loader";
 
 const imgPoke =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -50,14 +51,15 @@ const CardList = () => {
   }, [search]);
 
   if (loader) {
-    return (
-      <div className="loading">
-        <img src="http://a.top4top.net/p_1990j031.gif" alt="Loading" />
-      </div>
-    );
+    return <Loader />;
   } else {
     return (
       <>
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-gray-900">
+            Liste des pokemons
+          </h1>
+        </div>
         <span>Filtre : </span>
         <input
           className="p-2 w-60 border-none bg-state-400"
