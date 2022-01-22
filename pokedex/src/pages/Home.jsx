@@ -49,7 +49,7 @@ function Home() {
 
       <div className="App">
         <button className="button-default" onClick={toggle}>
-          Show Modal
+          Clique Ici
         </button>
         <Modal
           sendEmail={sendEmail}
